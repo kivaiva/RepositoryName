@@ -1,5 +1,13 @@
-book = 4 * 25 * 50 * 100
-inob = 1.44 * 1024 * 1024
-quantity = inob / book
+BYTES_ONE_CHAR = 4
 
-print("Количество книг, помещающихся на дискету:", int(quantity))
+pages = 100
+lines = 50
+chars = 25
+
+total_chars = pages * lines * chars
+total_bytes = total_chars * BYTES_ONE_CHAR
+
+disk_size = 1.44 * 1024 * 1024
+num_books = int(disk_size // total_bytes)
+
+print("Количество книг, помещающихся на дискету:", num_books)
